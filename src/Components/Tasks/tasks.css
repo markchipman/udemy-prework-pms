@@ -1,0 +1,58 @@
+/*  Task */
+.task-lane {
+    display: flex;
+    flex-direction: row;
+    min-height:600px;
+  }
+  
+  .task-phase {
+    display:flex;
+    flex-direction: column;
+    background-color: lightblue;
+    margin: 5px;
+  }
+  
+  .task-list{
+    list-style-type: none;
+    padding-left: 10px;
+    width: 80%;
+    padding-top: 10px;
+    
+  }
+  
+  .task-item {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    margin:5px;
+    border: 1px solid;
+  }
+  
+  .task-header {
+    padding:0.2em;
+    background-color: #ddd;
+  }
+  
+  .task-content {
+    padding:0.3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .task-content span.phase {
+    margin-right: 10px;
+  }
+  .task-buttons {
+    display:flex;
+    padding-top: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .task-completed {
+    background-color:lightgreen;
+  }
+  
+  

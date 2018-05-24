@@ -9,22 +9,56 @@ h1, h2, h3,h4 {
 hr {
   border: 0;
   border-bottom: 4px solid #FFB6C1;
-  
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-container {
+  display: flex;
+}
+
+.app-header {
+  background: #ddd;
+  padding:0.3em;
+}
+
+.app-title{
+  font-size: 0.8em;
+}
+
+
+
+.project-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.projects {
+  flex: 1; 
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .project-form{
-  background-color: #fff;
+  height: 100vh;
+  background-color: #ddd;
   display: flex;
   flex-direction: column;
   align-items:left;
   padding: 10px;
 }
+
 .project-form div > label {
   display: inline-block;
   width: 60px;
-}
-.project-form div > input {
-  
 }
 .project-form div {
   padding: 10px;
@@ -34,47 +68,28 @@ hr {
   padding-left: 5px;
 }
 
-.project-lane {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.project-phase {
-  display:flex;
-  flex-direction: column;
-  background-color: lightblue;
-  margin: 5px;
-}
-
-.project-list{
-  list-style-type: none;
-  padding-left: 10px;
-  width: 80%;
-  padding-top: 10px;
-  
-}
-
 .project-item {
+  box-sizing: border-box;
   width: 20em;
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
+  padding-bottom:5px;
   margin:5px;
-  border: 1px solid;
+  border: 1px solid #ddd;
+  border-radius: 0.3em 0.3em 0 0;
+  position: relative;  
 }
 
 .project-header {
-  padding:0.2em;
-  background-color: #ddd;
+  background-color: #1E9DF4;
+  color: white;
+  font-weight: 700;
+  border-radius: 0.3em 0.3em 0 0;
 }
 
 .project-content {
   padding:0.3em;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .project-content span.phase {
@@ -88,63 +103,6 @@ hr {
 }
 
 .project-completed {
-  background-color:lightgreen;
-}
-
-/*  Task */
-.task-lane {
-  display: flex;
-  flex-direction: row;
-  min-height:600px;
-}
-
-.task-phase {
-  display:flex;
-  flex-direction: column;
-  background-color: lightblue;
-  margin: 5px;
-}
-
-.task-list{
-  list-style-type: none;
-  padding-left: 10px;
-  width: 80%;
-  padding-top: 10px;
-  
-}
-
-.task-item {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 20px;
-  margin:5px;
-  border: 1px solid;
-}
-
-.task-header {
-  padding:0.2em;
-  background-color: #ddd;
-}
-
-.task-content {
-  padding:0.3em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.task-content span.phase {
-  margin-right: 10px;
-}
-.task-buttons {
-  display:flex;
-  padding-top: 10px;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.task-completed {
   background-color:lightgreen;
 }
 

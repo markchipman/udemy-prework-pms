@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './tasks.css';
 
 export default class TaskList extends React.Component {
     state = {
@@ -6,10 +7,6 @@ export default class TaskList extends React.Component {
       phase: ""
     }
     
-    constructor(props) {
-      super(props);
-    }
- 
     onEdit = (task) => {
       this.setState({
         title: task.title,

@@ -5,7 +5,7 @@ const SubHeader = (props) => {
       color: props.color || "blue"
     }
     return (
-      <h3 style={style}>{props.title}</h3>
+      <h3 className="app-title">{props.title}</h3>
     );
 }
 

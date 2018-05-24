@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Header from './Components/Header';
 import SubHeader from './Components/SubHeader';
-import ProjectForm from './Components/ProjectForm';
-import ProjectList from './Components/ProjectList';
-import TaskList from './Components/TaskList';
-
+import ProjectForm from './Components/Projects/ProjectForm';
+import ProjectList from './Components/Projects/ProjectList';
+import TaskList from './Components/Tasks/TaskList';
 import './App.css';
 
-class App extends React.Component {
+export default class App extends Component {
     state = {
       projects: [
         {id: 1, title: "Angular eBook",phase:"todo", completed:false, edit: false},
@@ -122,37 +121,40 @@ class App extends React.Component {
     render() {
       console.log(this.state.currentProject);
       return (
-        <div>
+        <div className="app-container">
            <Header title="Project Management App">
               <SubHeader color="red"
-                title="(Kanban based system)" />
+                title="{
+                  Kanban based system}" />
            </Header>
            <hr/>
            
-           <ProjectForm onProjectAdd={this.onProjectAdd} />
-           {!this.state.currentProject &&
-              <ProjectList 
-                projects={this.state.projects} 
-                phase={this.state.phase}
-                onEdit={this.onToggleEditProject}
-                onUpdate={this.onUpdate}
-                onCancel={this.onToggleEditProject}
-                onDelete={this.onDeleteProject}
-                onMarkCompleted={this.onMarkCompleted}
-                onProjectSelected={this.onProjectSelected}
-              />
-           }
-        
-          
-        {this.state.currentProject && <TaskList
-               tasks = {this.state.tasks}
-               phase={this.state.phase}
-               onNavigateToProject={this.showProjects}
-           /> 
-        }
+           <div className="project-container">
+              {!this.state.currentProject &&
+                  <ProjectList 
+                    projects={this.state.projects} 
+                    phase={this.state.phase}
+                    onEdit={this.onToggleEditProject}
+                    onUpdate={this.onUpdate}
+                    onCancel={this.onToggleEditProject}
+                    onDelete={this.onDeleteProject}
+                    onMarkCompleted={this.onMarkCompleted}
+                    onProjectSelected={this.onProjectSelected}
+                  />
+              }
+              {!this.state.currentProject &&<ProjectForm onProjectAdd={this.onProjectAdd} />
+              }
+              
+           </div>
+           <div className="task-container">
+              {this.state.currentProject && <TaskList
+                    tasks = {this.state.tasks}
+                    phase={this.state.phase}
+                    onNavigateToProject={this.showProjects}
+                /> 
+              }
+            </div>
         </div>
       );
     }
 }
-
-export default App;

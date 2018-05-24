@@ -6,10 +6,6 @@ class ProjectList extends React.Component {
     phase: ""
   }
   
-  constructor(props) {
-    super(props);
-  }
-
   onEdit = (project) => {
     this.setState({
       title: project.title,
@@ -149,7 +145,7 @@ class ProjectList extends React.Component {
     });
     
     return (
-      <div className="project-lane">
+      <div className="projects">
         {projectUI} 
       </div>
     );
