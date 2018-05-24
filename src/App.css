@@ -46,6 +46,7 @@ body {
   flex-direction: row;
 }
 .project-dashboard-title h3 {
+  padding:4px;
   line-height: 2em;
 }
 .project-dashboard-title button {
