@@ -34,6 +34,19 @@ hr {
   padding-left: 5px;
 }
 
+.project-lane {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.project-phase {
+  display:flex;
+  flex-direction: column;
+  background-color: lightblue;
+  margin: 5px;
+}
+
 .project-list{
   list-style-type: none;
   padding-left: 10px;
@@ -43,27 +56,27 @@ hr {
 }
 
 .project-item {
+  width: 20em;
   display: flex;
   flex-direction: column;
-  padding-left:5px;
-  padding-right: 5px;
   padding-bottom: 20px;
-  padding-top: 20px;
-  border-bottom: 1px dashed;
-  margin-bottom:10px;
+  margin:5px;
+  border: 1px solid;
 }
 
+.project-header {
+  padding:0.2em;
+  background-color: #ddd;
+}
 
 .project-content {
+  padding:0.3em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.project-content span.title {
-  
-}
 .project-content span.phase {
   margin-right: 10px;
 }
@@ -75,6 +88,63 @@ hr {
 }
 
 .project-completed {
+  background-color:lightgreen;
+}
+
+/*  Task */
+.task-lane {
+  display: flex;
+  flex-direction: row;
+  min-height:600px;
+}
+
+.task-phase {
+  display:flex;
+  flex-direction: column;
+  background-color: lightblue;
+  margin: 5px;
+}
+
+.task-list{
+  list-style-type: none;
+  padding-left: 10px;
+  width: 80%;
+  padding-top: 10px;
+  
+}
+
+.task-item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  margin:5px;
+  border: 1px solid;
+}
+
+.task-header {
+  padding:0.2em;
+  background-color: #ddd;
+}
+
+.task-content {
+  padding:0.3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.task-content span.phase {
+  margin-right: 10px;
+}
+.task-buttons {
+  display:flex;
+  padding-top: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.task-completed {
   background-color:lightgreen;
 }
 
