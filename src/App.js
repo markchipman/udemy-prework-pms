@@ -15,6 +15,8 @@ export default class App extends Component {
         {id: 4, title: "Modern JavaScript eBook",phase:"inprogress", completed:false,edit: false},
         {id: 5, title: "Node Microservice",phase:"inprogress", completed:false,edit: false},
       ],
+
+      newProject: false,
       
       tasks: [
         {id: 1, projectId: 1, title: "Plan Content", phase:"inprogress",completed:false,edit:false},
@@ -117,6 +119,12 @@ export default class App extends Component {
         currentProject: null
       })
     }
+
+    onNewProject = () => {
+      this.setState((prevState) => ({
+        newProject: !prevState.newProject
+      }));
+    }
     
     render() {
       console.log(this.state.currentProject);
@@ -140,9 +148,10 @@ export default class App extends Component {
                     onDelete={this.onDeleteProject}
                     onMarkCompleted={this.onMarkCompleted}
                     onProjectSelected={this.onProjectSelected}
+                    onNewProject={this.onNewProject}
                   />
               }
-              {!this.state.currentProject &&<ProjectForm onProjectAdd={this.onProjectAdd} />
+              {this.state.newProject &&<ProjectForm onProjectAdd={this.onProjectAdd} />
               }
               
            </div>

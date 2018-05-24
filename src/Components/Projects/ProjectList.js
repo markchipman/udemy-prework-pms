@@ -96,32 +96,32 @@ class ProjectList extends React.Component {
       <div className="project-item" key={project.id}>
          <div className="project-header">
             <span>{project.title}</span>
+            <div className="project-buttons">
+              <button className="button edit" title="edit"
+                onClick={()=>this.onEdit(project)}>
+                📖
+              </button>
+              <button className="button delete" title="delete"
+                onClick={()=>this.onDelete(project.id, project.title)}>
+                ❌
+              </button>
+              <button className="button dashboard" title="back to projects"
+                onClick={(e)=>this.gotoDashboard(e,project.id)}>
+                ▶
+              </button>
+          </div>
          </div>
          <div className="project-content">
            <span className="title">{project.title}</span>
-           <span className="title">{project.phase}</span>
+           <span className="title">Phase: {project.phase} ⚙ </span>
          </div>
-         <div className="project-buttons">
-           <div>
-            <button className="button edit"
-              onClick={()=>this.onEdit(project)}>
-              edit
-            </button>
-           <button className="button delete"
-              onClick={()=>this.onDelete(project.id, project.title)}>
-              delete
-            </button>
-            <a className="button dashboard" href="#"
-              onClick={(e)=>this.gotoDashboard(e,project.id)}>
-              dashboard
-            </a>
-           </div>
-           <label>
-             <input type="checkbox" checked={checked}
+         <div>
+            <label>
+               <input type="checkbox" checked={checked}
                   onChange={()=>this.props.onMarkCompleted(project.id)} />
                   mark as complete
-           </label>
-         </div>
+            </label>
+          </div>
       </div>
     );
   }
@@ -145,9 +145,15 @@ class ProjectList extends React.Component {
     });
     
     return (
-      <div className="projects">
-        {projectUI} 
-      </div>
+      <main>
+        <div className="project-dashboard-title">
+            <h3>PROJECTS</h3>
+            <button onClick={this.props.onNewProject} title="New Project" className="project-add">&#x1429;</button>
+        </div>
+        <div className="projects">
+          {projectUI} 
+        </div>
+      </main>
     );
   }
 }
