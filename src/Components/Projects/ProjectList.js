@@ -1,4 +1,5 @@
 import React from 'react';
+import './projects.css';
 
 class ProjectList extends React.Component {
   state = {
