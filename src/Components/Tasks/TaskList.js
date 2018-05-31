@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, {Fragment, Component } from 'react';
 import './tasks.css';
 
-export default class TaskList extends React.Component {
+export default class TaskList extends Component {
     state = {
       title: "",
       phase: ""
@@ -150,18 +150,19 @@ export default class TaskList extends React.Component {
       
       let phaseUI = [];
       this.props.phase.forEach((key) => {
-         var value = phase[key];
          phaseUI.push(
-           <div className="task-phase" key={key}>
-             {phase[key]}
-          </div>
+          <Fragment>
+            <div className="task-phase" key={key}>
+              <h2>{key}</h2>
+              {phase[key]}
+            </div>
+          </Fragment>
          );
       });
 
      
       return (
         <div className="task-lane">
-          <a href="#" onClick={this.gotoProjects}>back</a>
           {phaseUI}   
         </div>
       );

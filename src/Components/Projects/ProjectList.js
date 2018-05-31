@@ -99,21 +99,21 @@ class ProjectList extends React.Component {
             <div className="project-buttons">
               <button className="button edit" title="edit"
                 onClick={()=>this.onEdit(project)}>
-                📖
+                <span role="img" aria-label="edit project">📖</span>
               </button>
               <button className="button delete" title="delete"
                 onClick={()=>this.onDelete(project.id, project.title)}>
-                ❌
+                <span role="img" aria-label="delete project">❌</span>
               </button>
               <button className="button dashboard" title="back to projects"
                 onClick={(e)=>this.gotoDashboard(e,project.id)}>
-                ▶
+                <span role="img" aria-label="goto dashboard">▶</span>
               </button>
           </div>
          </div>
          <div className="project-content">
            <span className="title">{project.title}</span>
-           <span className="title">Phase: {project.phase} ⚙ </span>
+           <span className="title">Phase: {project.phase}</span>
          </div>
          <div>
             <label>
@@ -136,7 +136,6 @@ class ProjectList extends React.Component {
   }
  
   render() {
-    let phase = {};
     let {projects} = this.props;
     
     let projectUI = projects.map((project) => {
@@ -148,7 +147,8 @@ class ProjectList extends React.Component {
       <main>
         <div className="project-dashboard-title">
             <h3>PROJECTS</h3>
-            <button onClick={this.props.onNewProject} title="New Project" className="project-add">&#x1429;</button>
+            <button onClick={this.props.onNewProject} title="New Project" 
+                className="project-add">NEW PROJECT</button>
         </div>
         <div className="projects">
           {projectUI} 

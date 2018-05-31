@@ -134,6 +134,8 @@ export default class App extends Component {
               <SubHeader color="red"
                 title="{
                   Kanban based system}" />
+
+               {this.state.currentProject && <a href="#" onClick={this.onProjectSelected}>back</a>}
            </Header>
            <hr/>
            

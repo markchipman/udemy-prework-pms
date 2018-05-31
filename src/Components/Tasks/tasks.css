@@ -6,6 +6,7 @@
   }
   
   .task-phase {
+    min-width: 300px;
     display:flex;
     flex-direction: column;
     background-color: lightblue;
@@ -23,7 +24,7 @@
   .task-item {
     display: flex;
     flex-direction: column;
-    padding-bottom: 20px;
+    padding: 5px;
     margin:5px;
     border: 1px solid;
   }
