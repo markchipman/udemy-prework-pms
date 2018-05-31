@@ -50,7 +50,7 @@ export default class App extends Component {
     
     onToggleEditProject = (projectId) => {
       let projects = this.state.projects.map((p) => {
-        if (p.id == projectId) {
+        if (p.id === projectId) {
           p.edit = !p.edit;
         }
         return p;
@@ -62,7 +62,7 @@ export default class App extends Component {
     
     onUpdate = (id, project) => {
       let projects = this.state.projects.map((p) => {
-        if (p.id == id) {
+        if (p.id === id) {
           p.edit = !p.edit;
           p.title = project.title;
           p.phase = project.phase;
@@ -78,7 +78,7 @@ export default class App extends Component {
     onDeleteProject = (id, title) => {
       if (window.confirm(`Are you sure you want to delete ${title}?`)) {
         let projects = this.state.projects.filter((p) => {
-          return p.id != id;
+          return p.id !== id;
         });
         
         this.setState({
@@ -89,7 +89,7 @@ export default class App extends Component {
     
     onMarkCompleted = (projectId) => {
       let projects = this.state.projects.map((p) => {
-        if (p.id == projectId) {
+        if (p.id === projectId) {
           p.completed = !p.completed;
         }
         return p;

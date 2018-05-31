@@ -12,6 +12,10 @@
     background-color: lightblue;
     margin: 5px;
   }
+
+  .task-phase-title {
+    padding: 4px;
+  }
   
   .task-list{
     list-style-type: none;
@@ -24,18 +28,18 @@
   .task-item {
     display: flex;
     flex-direction: column;
-    padding: 5px;
     margin:5px;
     border: 1px solid;
   }
   
   .task-header {
-    padding:0.2em;
     background-color: #ddd;
+    margin: 0;
+    padding: 0;
   }
   
   .task-content {
-    padding:0.3em;
+    padding:4px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -47,7 +51,10 @@
   }
   .task-buttons {
     display:flex;
-    padding-top: 10px;
+    padding-left: 4px;
+    padding-right:4px;
+    padding-top: 40px;
+    padding-bottom: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
   }

@@ -151,9 +151,9 @@ export default class TaskList extends Component {
       let phaseUI = [];
       this.props.phase.forEach((key) => {
          phaseUI.push(
-          <Fragment>
+          <Fragment key={key}>
             <div className="task-phase" key={key}>
-              <h2>{key}</h2>
+              <h2 className="task-phase-title">{key}</h2>
               {phase[key]}
             </div>
           </Fragment>
