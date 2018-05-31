@@ -159,6 +159,7 @@ export default class App extends Component {
            </div>
            <div className="task-container">
               {this.state.currentProject && <TaskList
+                    project = {this.state.currentProject}
                     tasks = {this.state.tasks}
                     phase={this.state.phase}
                     onNavigateToProject={this.showProjects}

@@ -162,9 +162,12 @@ export default class TaskList extends Component {
 
      
       return (
-        <div className="task-lane">
-          {phaseUI}   
-        </div>
+        <Fragment>
+          <h2>Project: {this.props.project.title}</h2>
+          <div className="task-lane">
+            {phaseUI}   
+          </div>
+        </Fragment>
       );
     }
  }
