@@ -9,7 +9,7 @@
     min-width: 300px;
     display:flex;
     flex-direction: column;
-    background-color: lightblue;
+    background-color:snow;
     margin: 5px;
   }
 
@@ -30,6 +30,7 @@
     flex-direction: column;
     margin:5px;
     border: 1px solid;
+    background-color: white;
   }
   
   .task-header {

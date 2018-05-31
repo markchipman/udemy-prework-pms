@@ -163,7 +163,7 @@ export default class TaskList extends Component {
      
       return (
         <Fragment>
-          <h2>Project: {this.props.project.title}</h2>
+          <h3>Project: {this.props.project.title}</h3>
           <div className="task-lane">
             {phaseUI}   
           </div>
