@@ -167,14 +167,16 @@ export default class TaskList extends Component {
 
      
       return (
-        <Fragment>
-          <h3>Project: {this.props.project.title}</h3>
-          <button onClick={this.props.onNewTask} title="New Task" 
-                className="task-add">NEW TASK</button>
+        <main>
+          <div className="task-dashboard-title">
+            <h3>Project: {this.props.project.title}</h3>
+            <button onClick={this.props.onNewTask} title="New Task" 
+                  className="task-add">NEW TASK</button>
+          </div>
           <div className="task-lane">
             {phaseUI}   
           </div>
-        </Fragment>
+        </main>
       );
     }
  }

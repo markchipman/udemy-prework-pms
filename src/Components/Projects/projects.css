@@ -1,7 +1,3 @@
-.project-container {
-    display: flex;
-  }
-  
   .project-container {
     display: flex;
     flex-direction: row;

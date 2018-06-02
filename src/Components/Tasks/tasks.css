@@ -1,4 +1,25 @@
 /*  Task */
+.task-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: none;
+}
+
+.task-dashboard-title {
+  background-color: fff;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.task-dashboard-title h3 {
+  padding:4px;
+  line-height: 2em;
+}
+.task-dashboard-title button {
+  margin-top: 3px;
+  margin-left: 50px;
+}
+
 .task-lane {
     display: flex;
     flex-direction: row;
