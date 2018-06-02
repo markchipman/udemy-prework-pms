@@ -55,13 +55,22 @@
     border: 1px solid lightgray;
     background-color: white;
   }
-  
+
   .task-header {
-    background-color: #ddd;
-    margin: 0;
-    padding: 4px;
+    display: flex;
+    background-color: #1E9DF4;
+    font-weight: 700;
+    border-radius: 0.3em 0.3em 0 0;
   }
-  
+
+  .task-icons {
+    cursor: pointer;
+    margin-left: auto;
+  }
+  .task-header span {
+    margin-left: 4px;
+  }
+
   .task-content {
     padding:4px;
     display: flex;
@@ -74,12 +83,13 @@
     margin-right: 10px;
   }
   .task-buttons {
+    cursor: pointer;
     display:flex;
+    flex-direction: row;
     padding-left: 4px;
     padding-right:4px;
-    padding-top: 40px;
     padding-bottom: 10px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
   }
   

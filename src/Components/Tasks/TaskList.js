@@ -54,12 +54,19 @@ export default class TaskList extends Component {
       
       this.props.onEdit(task.id);
     }
+
+    openTask = (e,taskId) => {
+      alert (taskId);
+    }
     
     editorUI(task) {
       return (
         <div className="task-item" key={task.id}>
-           <div className="project-header">
-              <span>{task.title}</span>
+           <div className="task-header">
+            <span>{task.title}</span>
+            <div className="task-icons">
+                <span onClick={(e)=>this.openTask(e,task.id)} role="img" aria-label="maximize">⬜</span>
+             </div>
            </div>
            <div className="task-content">
             <input type="text"
@@ -95,8 +102,12 @@ export default class TaskList extends Component {
       return (
         <div className="task-item" key={task.id}>
            <div className="task-header">
-              <span>{task.title}</span>
+            <span>{task.title}</span>
+            <div className="task-icons">
+                <span onClick={(e)=>this.openTask(e,task.id)} role="img" aria-label="maximize">⬜</span>
+             </div>
            </div>
+
            <div className="task-content">
              <span className="title">{task.title}</span>
              <span className="title">{task.phase}</span>
