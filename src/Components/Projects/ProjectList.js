@@ -110,7 +110,7 @@ class ProjectList extends React.Component {
                 onClick={(e)=>this.gotoDashboard(e,project.id)}>
                 <span role="img" aria-label="goto dashboard">▶</span>
               </button>
-          </div>
+             </div>
          </div>
          <div className="project-content">
            <span className="title">{project.title}</span>
