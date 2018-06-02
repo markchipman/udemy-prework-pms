@@ -28,7 +28,10 @@ export default class App extends Component {
         {id: 6, projectId: 2, title: "Create React TOC", phase:"todo",completed:false,edit:false},
         {id: 7, projectId: 2, title: "Create React Cover Image", phase:"todo",completed:false,edit:false},
         {id: 8, projectId: 2, title: "Write the first draft of ReactJS", phase:"todo",completed:false,edit:false},
-        
+       
+        {id: 9, projectId: 3, title: "NodejS 1", phase:"todo",completed:false,edit:false},
+        {id: 10, projectId: 4, title: "ModernJS  1", phase:"todo",completed:false,edit:false},
+       
       ],
       phase: ["todo","inprogress","completed"],
       currentProject: null,
@@ -160,7 +163,7 @@ export default class App extends Component {
            <div className="task-container">
               {this.state.currentProject && <TaskList
                     project = {this.state.currentProject}
-                    tasks = {this.state.tasks}
+                    tasks = {this.state.tasks.filter((t) => t.projectId === this.state.currentProject.id)}
                     phase={this.state.phase}
                     onNavigateToProject={this.showProjects}
                 /> 
