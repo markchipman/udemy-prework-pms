@@ -113,7 +113,8 @@ export default class App extends Component {
     onProjectSelected = (projectId) =>{
       let project = this.findProject(projectId);
       this.setState({
-        currentProject: project
+        currentProject: project,
+        newProject: false,
       });
     }
 
