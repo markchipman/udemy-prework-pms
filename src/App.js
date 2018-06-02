@@ -4,9 +4,18 @@ import SubHeader from './Components/SubHeader';
 import ProjectForm from './Components/Projects/ProjectForm';
 import ProjectList from './Components/Projects/ProjectList';
 import TaskList from './Components/Tasks/TaskList';
+import TaskForm from './Components/Tasks/TaskForm';
+
+import TaskService from './Services/TaskService';
+
 import './App.css';
 
 export default class App extends Component {
+    constructor() {
+      super();
+      this.taskService = new TaskService(this);
+    }
+
     state = {
       projects: [
         {id: 1, title: "Angular eBook",phase:"todo", completed:false, edit: false},
@@ -17,6 +26,7 @@ export default class App extends Component {
       ],
 
       newProject: false,
+      newTask: false,
       
       tasks: [
         {id: 1, projectId: 1, title: "Plan Content", phase:"inprogress",completed:false,edit:false},
@@ -129,6 +139,34 @@ export default class App extends Component {
         newProject: !prevState.newProject
       }));
     }
+
+    onNewTask = () => {
+      this.setState((prevState) => ({
+        newTask: !prevState.newTask
+      }));
+    }
+
+    onTaskAdd = (project,task) => {
+      this.taskService.onAdd(project,task);
+    }
+
+    onDeleteTask = (id, title) => {
+      if (window.confirm(`Are you sure you want to delete ${title}?`)) {
+        this.taskService.onDelete(id);
+      }
+    }
+
+    onToggleEditTask = (taskId) => {
+      this.taskService.onToggleEdit(taskId);
+    }
+
+    onUpdateTask = (id, task) => {
+      this.taskService.onUpdate(id, task);
+    }
+
+    onTaskMarkCompleted = (taskId) => {
+      this.taskService.onMarkCompleted(taskId);
+    }
     
     render() {
       console.log(this.state.currentProject);
@@ -166,8 +204,15 @@ export default class App extends Component {
                     project = {this.state.currentProject}
                     tasks = {this.state.tasks.filter((t) => t.projectId === this.state.currentProject.id)}
                     phase={this.state.phase}
-                    onNavigateToProject={this.showProjects}
+                    onEdit={this.onToggleEditTask}
+                    onUpdate={this.onUpdateTask}
+                    onCancel={this.onToggleEditTask}
+                    onDelete={this.onDeleteTask}
+                    onMarkCompleted={this.onTaskMarkCompleted}
+                    onNewTask={this.onNewTask}
                 /> 
+              }
+               {this.state.newTask &&<TaskForm project={this.state.currentProject} onTaskAdd={this.onTaskAdd} />
               }
             </div>
         </div>
