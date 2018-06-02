@@ -60,7 +60,7 @@ export default class App extends Component {
       });
     }
     
-    onUpdate = (id, project) => {
+    onUpdateProject = (id, project) => {
       let projects = this.state.projects.map((p) => {
         if (p.id === id) {
           p.edit = !p.edit;
@@ -87,7 +87,7 @@ export default class App extends Component {
       }
     }
     
-    onMarkCompleted = (projectId) => {
+    onProjectMarkCompleted = (projectId) => {
       let projects = this.state.projects.map((p) => {
         if (p.id === projectId) {
           p.completed = !p.completed;
@@ -145,10 +145,10 @@ export default class App extends Component {
                     projects={this.state.projects} 
                     phase={this.state.phase}
                     onEdit={this.onToggleEditProject}
-                    onUpdate={this.onUpdate}
+                    onUpdate={this.onUpdateProject}
                     onCancel={this.onToggleEditProject}
                     onDelete={this.onDeleteProject}
-                    onMarkCompleted={this.onMarkCompleted}
+                    onMarkCompleted={this.onProjectMarkCompleted}
                     onProjectSelected={this.onProjectSelected}
                     onNewProject={this.onNewProject}
                   />
