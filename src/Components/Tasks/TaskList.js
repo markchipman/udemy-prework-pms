@@ -56,7 +56,7 @@ export default class TaskList extends Component {
     }
 
     openTask = (e,taskId) => {
-      alert (taskId);
+      this.props.onOpenTask(taskId);
     }
     
     editorUI(task) {

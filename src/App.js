@@ -167,6 +167,16 @@ export default class App extends Component {
     onTaskMarkCompleted = (taskId) => {
       this.taskService.onMarkCompleted(taskId);
     }
+
+    onOpenTask = (taskId) => {
+      let task = this.state.tasks.find((t) => {
+        return t.id === taskId;
+      });
+
+      this.setState((prevState) => ({
+        currentTask: task
+      }));
+    }
     
     render() {
       console.log(this.state.currentProject);
@@ -197,6 +207,8 @@ export default class App extends Component {
               }
               {this.state.newProject &&<ProjectForm onProjectAdd={this.onProjectAdd} />
               }
+
+             
               
            </div>
            <div className="task-container">
@@ -210,9 +222,14 @@ export default class App extends Component {
                     onDelete={this.onDeleteTask}
                     onMarkCompleted={this.onTaskMarkCompleted}
                     onNewTask={this.onNewTask}
+                    onOpenTask={this.onOpenTask}
                 /> 
               }
-               {this.state.newTask &&<TaskForm project={this.state.currentProject} onTaskAdd={this.onTaskAdd} />
+              {this.state.newTask &&<TaskForm project={this.state.currentProject} onTaskAdd={this.onTaskAdd} />
+              }
+              
+              {this.state.currentTask &&
+                <TaskForm task={this.state.currentTask} project={this.state.currentProject} onTaskAdd={this.onTaskAdd} />
               }
             </div>
         </div>

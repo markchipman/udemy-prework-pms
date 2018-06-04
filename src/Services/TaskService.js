@@ -4,14 +4,30 @@ class TaskService {
     }
 
     onAdd = (project,task) => {
+        if (task.id) {  // edit
+            let tasks = this.app.state.tasks.map((t) => {
+                if (t.id === task.id) {
+                    t.title = task.title;
+                    t.phase = task.phase;
+                }
+                return t;
+            });
+
+            this.app.setState({
+                tasks
+            });
+            return;
+        }
+
+        // New task
         let maxId = +new Date();
-        alert(maxId);
         task.id = maxId;
         task.edit = false;
         task.completed = false;
         task.projectId = project.id;
         
         let tasks = [task, ...this.app.state.tasks];
+        console.log("# Tasks: ", tasks.length);
         this.app.setState({
             tasks
         });
