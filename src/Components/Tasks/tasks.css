@@ -21,81 +21,80 @@
 }
 
 .task-lane {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    min-height:600px;
-    background-color: lightgray;
-  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height:600px;
+  background-color: lightgray;
+}
   
-  .task-phase {
-    min-width: 300px;
-    display:flex;
-    flex-direction: column;
-    background-color:snow;
-    margin: 5px;
-  }
+.task-phase {
+  min-width: 300px;
+  display:flex;
+  flex-direction: column;
+  background-color:snow;
+  margin: 5px;
+}
 
-  .task-phase-title {
-    padding: 4px;
-  }
+.task-phase-title {
+  padding: 4px;
+}
   
-  .task-list{
-    list-style-type: none;
-    padding-left: 10px;
-    width: 80%;
-    padding-top: 10px;
-    
-  }
+.task-list{
+  list-style-type: none;
+  padding-left: 10px;
+  width: 80%;
+  padding-top: 10px;
   
-  .task-item {
-    display: flex;
-    flex-direction: column;
-    margin:5px;
-    border: 1px solid lightgray;
-    background-color: white;
-    border-radius: 0.3em 0.3em 0 0;
-  }
+}
 
-  .task-header {
-    display: flex;
-    background-color: #1E9DF4;
-    font-weight: 700;
-    border-radius: 0.3em 0.3em 0 0;
-  }
+.task-item {
+  display: flex;
+  flex-direction: column;
+  margin:5px;
+  border: 1px solid lightgray;
+  background-color: white;
+  border-radius: 0.3em 0.3em 0 0;
+}
 
-  .task-icons {
-    cursor: pointer;
-    margin-left: auto;
-  }
-  .task-header span {
-    margin-left: 4px;
-  }
+.task-header {
+  display: flex;
+  background-color: #1E9DF4;
+  font-weight: 700;
+  border-radius: 0.3em 0.3em 0 0;
+}
 
-  .task-content {
-    padding:4px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  .task-content span.phase {
-    margin-right: 10px;
-  }
-  .task-buttons {
-    cursor: pointer;
-    display:flex;
-    flex-direction: row;
-    padding-left: 4px;
-    padding-right:4px;
-    padding-bottom: 10px;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-  }
-  
-  .task-completed {
-    background-color:lightgreen;
-  }
-  
-  
+.task-icons {
+  cursor: pointer;
+  margin-left: auto;
+}
+.task-header span {
+  margin-left: 4px;
+}
+
+.task-content {
+  padding:4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.task-content span.phase {
+  margin-right: 10px;
+}
+.task-buttons {
+  cursor: pointer;
+  display:flex;
+  flex-direction: row;
+  padding-left: 4px;
+  padding-right:4px;
+  padding-bottom: 10px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.task-completed {
+  background-color:lightgreen;
+}
+
